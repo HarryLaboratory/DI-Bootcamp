@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Random Character</title>
+  <link rel="stylesheet" href="MP_StarWars.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Star Wars Random Character</h1>
+    
+    <!-- The random character -->
+    <button id="load-character" class="btn">Get Random Character</button>
+
+    <!-- The Loading message -->
+    <div id="loading" class="loading">
+      <i class="fa fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <!-- The Error message -->
+    <div id="error-message" class="error-message">
+      Oops! There was an error fetching the character data. Please try again later.
+    </div>
+
+    <!-- The Character details -->
+    <div id="character-info" class="character-info">
+      <p id="name"></p>
+      <p id="height"></p>
+      <p id="gender"></p>
+      <p id="birth-year"></p>
+      <p id="homeworld"></p>
+    </div>
+
+    <!-- Star Wars Theme Music -->
+    <div id="star-wars-music-container">
+      <audio id="star-wars-music" controls autoplay>
+        <source src="https://www.televisiontunes.com/uploads/audio/Star%20Wars.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+
+  <script src="MP_StarWars.js"></script>
+</body>
+</html>
+
