@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #emoji { font-size: 100px; }
+        .option { margin: 10px; cursor: pointer; }
+        #score { margin-top: 20px; }
+        #timer { color: red; font-weight: bold; }
+        #hint { margin-top: 20px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Guess the Emoji!</h1>
+    <div id="username"></div>
+    <div id="emoji">😀</div>
+    <div id="options"></div>
+    <div id="timer">Time: 30s</div>
+    <div id="hint"></div>
+    <div id="score">Score: 0</div>
+
+    <script>
+        let score = 0;
+        let timeLimit = 30;
+        let timer;
+        let timeRemaining;
+
+        // To get the game data from the server
+        function getGame() {
+            fetch('/game?difficulty=medium')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').textContent = `Logged in as: ${data.username}`;
+                    document.getElementById('emoji').textContent = data.emoji;
+                    document.getElementById('hint').textContent = data.hint;
+                    timeLimit = data.timeLimit;
+                    timeRemaining = timeLimit;
+                    startTimer();
+
+                    const optionsDiv = document.getElementById('options');
+                    optionsDiv.innerHTML = ''; 
+                    data.options.forEach(option => {
+                        const button = document.createElement('button');
+                        button.classList.add('option');
+                        button.textContent = option.name;
+                        button.onclick = () => checkAnswer(option.name, data.correctAnswer);
+                        optionsDiv.appendChild(button);
+                    });
+                });
+        }
+
+        // To check if the answer is correct
+        function checkAnswer(selected, correct) {
+            clearInterval(timer);
+            if (selected === correct) {
+                score++;
+                alert('Correct! Your score is now ' + score);
+            } else {
+                alert('Incorrect. The correct answer was ' + correct);
+            }
+            document.getElementById('score').textContent = 'Score: ' + score;
+            getGame(); 
+        }
+
+        // Timer countdown 
+        function startTimer() {
+            document.getElementById('timer').textContent = `Time: ${timeRemaining}s`;
+            timer = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('timer').textContent = `Time: ${timeRemaining}s`;
+                if (timeRemaining <= 0) {
+                    clearInterval(timer);
+                    alert('Time’s up!');
+                    getGame(); 
+                }
+            }, 1000);
+        }
+
+        getGame();
+    </script>
+</body>
+</html>
+
