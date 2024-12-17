@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <script>
+    function toggleSubmitButton() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const submitButton = document.getElementById('submitBtn');
+      submitButton.disabled = !(username && password);
+    }
+  </script>
+</head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm">
+    <input type="text" id="firstName" placeholder="First Name" required><br>
+    <input type="text" id="lastName" placeholder="Last Name" required><br>
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="text" id="username" placeholder="Username" oninput="toggleSubmitButton()" required><br>
+    <input type="password" id="password" placeholder="Password" oninput="toggleSubmitButton()" required><br>
+    <button type="submit" id="submitBtn" disabled>Register</button>
+  </form>
+</body>
+</html>
