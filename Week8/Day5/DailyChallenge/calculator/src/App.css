@@ -1,0 +1,105 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Style for the calculator container */
+.calculator {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the input fields, select dropdown, and button */
+input,
+select,
+button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+/* Button specific styling */
+button {
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 85%;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Heading styles for calculator */
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Result text */
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Styling for the select dropdown */
+select {
+  width: 85%;
+  padding: 10px;
+}
+
+/* Styling for the number input fields */
+input[type='number'] {
+  width: 80%;
+}
+
+
+.read-the-docs {
+  color: #888;
+}
+
