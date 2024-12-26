@@ -1,0 +1,19 @@
+{
+  "socialMedia": [
+    { "platform": "Facebook", "url": "https://www.facebook.com", "followers": 1000 },
+    { "platform": "Twitter", "url": "https://www.twitter.com", "followers": 1500 },
+    { "platform": "Instagram", "url": "https://www.instagram.com", "followers": 2000 }
+  ],
+  "skills": [
+    { "name": "JavaScript", "level": "Intermediate" },
+    { "name": "React", "level": "Advanced" },
+    { "name": "CSS", "level": "Beginner" }
+  ],
+  "experiences": [
+    { "company": "Company A", "position": "Software Developer", "years": 2 },
+    { "company": "Company B", "position": "Frontend Developer", "years": 3 },
+    { "company": "Company C", "position": "Backend Developer", "years": 1 }
+  ]
+}
+
+  
