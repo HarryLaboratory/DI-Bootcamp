@@ -1,0 +1,107 @@
+/* Global Styles */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Light and Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --link-color: #646cff;
+    --link-hover-color: #535bf2;
+    --button-bg-color: #1a1a1a;
+    --button-border-color: transparent;
+    --button-hover-border-color: #646cff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #213547;
+    --link-color: #4e73df;
+    --link-hover-color: #747bff;
+    --button-bg-color: #f9f9f9;
+    --button-border-color: #ddd;
+    --button-hover-border-color: #4e73df;
+  }
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Button Styles */
+button {
+  border-radius: 8px;
+  border: 1px solid var(--button-border-color);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: var(--button-hover-border-color);
+  background-color: #e6e6e6;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Adjusting for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
